@@ -1,0 +1,51 @@
+#container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* Typography
+*/
+
+/* Traditional, em */
+body { font-size:100%; line-height:1.25; }
+h1, h2, h3 { margin-top:0; margin-bottom:0; }
+h1 { font-size:1.5em; padding:1.45833em 0; }
+h2 { font-size:1.33333em; padding:1.25em 0; }
+h3 { font-size:1.16667em; padding:1.51785em 0; }
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
+/* Background image
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+
+
+/* Header
+*/
+
+#header ul {
+  list-style: none;
+}
+
+
+
+/* Common 
+*/
+
+

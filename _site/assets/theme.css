@@ -1,0 +1,9 @@
+body {
+  background-color: #fff;
+}
+
+a, a:visited, a:hover,:link, *:visited {
+  color: #000;
+  text-decoration: none;
+}
+
