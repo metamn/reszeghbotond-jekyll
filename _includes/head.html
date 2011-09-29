@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,24 +11,20 @@
 
     <title>{{ site.title }}</title>
     
-    <link href="/assets/base.css" rel="stylesheet"> 
-    <link href="/assets/layout.css" rel="stylesheet">
-    <link href="/assets/theme.css" rel="stylesheet">    
+    <link href="{{ site.url }}/assets/base.css" rel="stylesheet"> 
+    <link href="{{ site.url }}/assets/layout.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/theme.css" rel="stylesheet">    
     
-    <link rel="stylesheet" href="/assets/mobile.css" media="screen and (max-width: 640px)" />
-    <link rel="stylesheet" href="/assets/tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)" />
-    <link rel="stylesheet" href="/assets/wide.css" media="screen and (min-width: 1025px) and (max-width: 1399px)" /> 
-    <link rel="stylesheet" href="/assets/large.css" media="screen and (min-width: 1400px)" /> 
+    <link rel="stylesheet" href="{{ site.url }}/assets/mobile.css" media="screen and (max-width: 640px)" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/tablet.css" media="screen and (min-width: 641px) and (max-width: 1024px)" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/wide.css" media="screen and (min-width: 1025px) and (max-width: 1399px)" /> 
+    <link rel="stylesheet" href="{{ site.url }}/assets/large.css" media="screen and (min-width: 1400px)" /> 
  
-    <link rel="stylesheet" href="/assets/long.css" media="screen and (device-aspect-ratio: 4/3)" />
-    <link rel="stylesheet" href="/assets/long.css" media="screen and (device-aspect-ratio: 5/4)" />
-    
-    <!--[if IE]>
-    <link href="/assets/ie.css" media="all" type="text/css" rel="stylesheet">  
-	  <![endif]-->
-	  
+    <link rel="stylesheet" href="{{ site.url }}/assets/long.css" media="screen and (device-aspect-ratio: 4/3)" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/long.css" media="screen and (device-aspect-ratio: 5/4)" />
+    	  
 	  <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
 
-    <script type="text/javascript" src="/assets/modernizr.custom.30919.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/assets/modernizr.custom.30919.js"></script>
   </head>
 
