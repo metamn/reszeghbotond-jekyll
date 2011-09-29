@@ -8,11 +8,18 @@
     
     {% include header.html %}    
     
+    {% if page.background != _blank %}
+      <div id="background-image" class="hidden">/assets/{{ page.background }}</div>
+    {% else %}
+      <div id="background-image" class="hidden">/assets/background.jpg</div>
+    {% endif %}
+    
     <section id="content">
       {{ content }}
     </section>
   </div>
   
+  {% include footer.html %}
   {% include ga.html %}
 </body>
 </html>
