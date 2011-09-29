@@ -2,6 +2,25 @@
 layout: default
 ---
 
+<h1>{{ page.category }}</h1>
+
+<span id="current"></span>/<span id="total"></span>
+
+<p>
+  {{ page.date | date: '%Y' }}
+  {% if page.tags.size > 1 %}
+  , {{ page.tags | join:', ' }}
+  {% endif %}
+</p>
+
+<p>
+  <span class="spacer">&nbsp;</span>
+  <span class="link prev"> < </span>  
+  <span class="spacer">&nbsp;</span>
+  <span class="link all"> view all </span>
+  <span class="spacer">&nbsp;</span>
+  <span class="link next"> > </span>
+</p>
 <ul id="posts" class="hidden">
   {% for post in site.posts %}
     {% if post.category == page.category %}
@@ -18,6 +37,6 @@ layout: default
 </ul>
 
 <ul id="navigation" class="inline-list">
-  <li class="prev"><</li>
-  <li class="next">></li>
+  <li class="link prev"><</li>
+  <li class="link next">></li>
 </ul>

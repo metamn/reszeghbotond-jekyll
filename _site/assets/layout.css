@@ -53,11 +53,15 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  cursor: pointer;
   font-size: 500%;
 }
-#navigation .inactive {
-  opacity: .2;
+
+
+/* Content
+*/
+
+section h1 {
+  padding-bottom: 0;
 }
 
 

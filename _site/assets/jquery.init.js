@@ -3,29 +3,50 @@ jQuery.noConflict();
 // Use jQuery via jQuery(...)
 jQuery(document).ready(function(){
 
+  // Hide header on single post page
+  if (jQuery("#posts").size()) {
+    jQuery("#header").fadeTo(5000, 0);
+  }
+  
+  // SHow header on mouseover
+  jQuery("#header").hover(
+    function () {
+      jQuery(this).fadeTo(1000, 1);
+    },
+    function () {
+      if (jQuery("#posts").size()) {
+        jQuery(this).fadeTo(500, 0);
+      }      
+    }
+  );
+
+  // Calculate the current/total posts
+  jQuery("#total").html(jQuery("#posts li").size());
+  jQuery("#current").html(jQuery("#posts").find(".current").index() + 1);
+
   // Check to hide the prev / next buttons
   current = jQuery("#posts").find('.current');  
   if (current) {
     if (!(current.next().html())) {
-      jQuery("#navigation .next").addClass('inactive');
+      jQuery(".next").fadeTo('slow', .1);
     }
     if (!(current.prev().html())) {
-      jQuery("#navigation .prev").addClass('inactive');
+      jQuery(".prev").fadeTo('slow', .1);
     }
   }
 
-  // Navigato to prev and next posts
+  // Navigate to prev and next posts
   function navigate(elem) {
     if (elem) {
       window.location.href = elem.html();
     }
   }
   
-  jQuery("#navigation .prev").click(function() {
+  jQuery(".prev").click(function() {
     navigate(jQuery("#posts").find('.current').prev());
   });
   
-  jQuery("#navigation .next").click(function() {
+  jQuery(".next").click(function() {
     navigate(jQuery("#posts").find('.current').next());
   });
 
