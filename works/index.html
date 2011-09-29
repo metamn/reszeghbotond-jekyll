@@ -7,7 +7,7 @@ layout: default
 <ul>
 {% for post in site.posts %}
   <li id="{{ post.date | date: '%Y' }}">
-    <a href="{{ post.url }}">
+    <a href="{{ site.url }}{{ post.url }}">
       <span id="year" class="{{ post.date | date: '%Y' }}">{{ post.date | date: "%Y" }}</span>
       <span id="collection" class="{{ post.category }}"> - {{ post.category }}</span>
     </a>

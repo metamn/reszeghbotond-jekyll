@@ -1,4 +1,4 @@
-permalink: /:title
+permalink: /:categories/:title
 
 title: Részegh Botond
 url: http://metamn.github.com/reszeghbotond.ro/
