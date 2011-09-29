@@ -3,13 +3,14 @@ jQuery.noConflict();
 // Use jQuery via jQuery(...)
 jQuery(document).ready(function(){
 
-  // Hide header on single post page
+  // Hide unnecessary elements on single post page
   if (jQuery("#posts").size()) {
-    jQuery("#header").fadeTo(5000, 0);
+    jQuery("#header").fadeTo(2000, 0);
+    jQuery("#nav").fadeTo(2000, 0);
   }
   
-  // SHow header on mouseover
-  jQuery("#header").hover(
+  // Show unnecesary elements on mouseover on single post page
+  jQuery("#header, #nav").hover(
     function () {
       jQuery(this).fadeTo(1000, 1);
     },
