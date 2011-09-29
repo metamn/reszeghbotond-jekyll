@@ -1,3 +1,5 @@
+---
+---
 body {
-  background-image: url("/assets/background-1440x900.jpg");
+  background-image: url("/assets/background-{{ site.large }}.jpg");
 }

@@ -1,12 +1,16 @@
 <header id="header" class="block">
-  <nav id="menu">
+  <hgroup>
+    <h1><a title="{{ site.title }}" href="/">{{ site.title }}</a></h1>
+  </hgroup>
+  
+  <nav>
     <h3 class="hidden">Top menu</h3>    
-    <ul class="inline-list">
-      <li><a class="home" href="/">Home</a></li>            
+    <ul>
+      <li><a title="{{ site.title }} Biography" href="/bio">Biography</a></li>
+      <li><a title="{{ site.title }} Works" href="/works">Works</a></li>            
+      <li><a title="{{ site.title }} Blog" href="http://reszeghbotond.wordpress.com">News</a></li>            
+      <li><a title="Contact {{ site.title }}" href="/contact">Contact</a></li>            
     </ul>     
   </nav>
   
-  <hgroup id="logo">
-    <h1><a title="{{ site.title }}" href="/">{{ site.title }}</a></h1>
-  </hgroup>
 </header>
