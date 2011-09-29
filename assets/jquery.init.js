@@ -3,10 +3,38 @@ jQuery.noConflict();
 // Use jQuery via jQuery(...)
 jQuery(document).ready(function(){
 
-  // Display collections in works
+  // Check to hide the prev / next buttons
+  current = jQuery("#posts").find('.current');  
+  if (current) {
+    if (!(current.next().html())) {
+      jQuery("#navigation .next").addClass('inactive');
+    }
+    if (!(current.prev().html())) {
+      jQuery("#navigation .prev").addClass('inactive');
+    }
+  }
+
+  // Navigato to prev and next posts
+  function navigate(elem) {
+    if (elem) {
+      window.location.href = elem.html();
+    }
+  }
+  
+  jQuery("#navigation .prev").click(function() {
+    navigate(jQuery("#posts").find('.current').prev());
+  });
+  
+  jQuery("#navigation .next").click(function() {
+    navigate(jQuery("#posts").find('.current').next());
+  });
+
+
+
+  // Displaying the list of works  
   var year = 0;
   var collection = '';
-  jQuery("#content ul li").each(function (index, element) {
+  jQuery("#content #works li").each(function (index, element) {
     if (year == jQuery(this).attr("id")) {
       jQuery(this).find("#year").css('opacity', '0');
     }

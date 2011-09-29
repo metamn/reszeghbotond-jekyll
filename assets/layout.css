@@ -36,6 +36,30 @@ body {
 
 
 
+/* Header
+*/
+
+#works #year {
+  width: 2.1em;
+  display: inline-block;
+}
+
+
+
+/* Navigation
+*/
+
+#navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 500%;
+}
+#navigation .inactive {
+  opacity: .2;
+}
+
 
 /* Common 
 */

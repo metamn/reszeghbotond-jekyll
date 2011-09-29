@@ -4,7 +4,7 @@ layout: default
 
 <h1>Works</h1>
 
-<ul>
+<ul id="works">
 {% for post in site.posts %}
   {% if post.category != 'books' %}
     <li id="{{ post.date | date: '%Y' }}">

@@ -2,4 +2,22 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
+<ul id="posts" class="hidden">
+  {% for post in site.posts %}
+    {% if post.category == page.category %}
+      
+      {% assign klass = '' %}
+      {% if post.title == page.title %}
+        {% assign klass = 'current' %}
+      {% endif %}
+      
+      <li class="{{ klass }}">{{ site.url }}{{ post.url }}</li>
+      
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<ul id="navigation" class="inline-list">
+  <li class="prev"><</li>
+  <li class="next">></li>
+</ul>
