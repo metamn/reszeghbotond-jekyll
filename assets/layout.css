@@ -36,16 +36,13 @@ body {
 
 
 
-/* Header
-*/
-
-#header ul {
-  list-style: none;
-}
-
-
 
 /* Common 
 */
+
+ul {
+  list-style: none;
+}
+
 
 
