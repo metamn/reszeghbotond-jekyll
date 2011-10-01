@@ -6,11 +6,11 @@ jQuery(document).ready(function(){
   // Hide unnecessary elements on single post page
   if (jQuery("#posts").size()) {
     jQuery("#header").fadeTo(2000, 0);
-    jQuery("#nav").fadeTo(2000, 0);
+    jQuery("article #navigation.top").fadeTo(2000, 0);
   }
   
   // Show unnecesary elements on mouseover on single post page
-  jQuery("#header, #nav").hover(
+  jQuery("#header, article #navigation.top").hover(
     function () {
       jQuery(this).fadeTo(1000, 1);
     },
@@ -53,10 +53,10 @@ jQuery(document).ready(function(){
 
 
 
-  // Displaying the list of works  
+  // Making the list of works looking good
   var year = 0;
   var collection = '';
-  jQuery("#content #works li").each(function (index, element) {
+  jQuery("#works li").each(function (index, element) {
     if (year == jQuery(this).attr("id")) {
       jQuery(this).find("#year").css('opacity', '0');
     }
@@ -68,6 +68,10 @@ jQuery(document).ready(function(){
     collection = jQuery(this).find("#collection").html();
   });
 
+  // Displaying Works
+  jQuery("#menu li.works").click(function() {
+    jQuery("#works").show();
+  });
   
   // Display the background-image
   jQuery('body').css('background-image', 'url(' + jQuery("#background-image").html() + ')');

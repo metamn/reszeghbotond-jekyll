@@ -2,41 +2,45 @@
 layout: default
 ---
 
-<h1>{{ page.category }}</h1>
+<article>
+  <header>
+    <h1><span>{{ page.category }}</span></h1>
+  </header>
 
-<span id="current"></span>/<span id="total"></span>
-
-<p>
-  {{ page.date | date: '%Y' }}
-  {% if page.tags.size > 1 %}
-  , {{ page.tags | join:', ' }}
-  {% endif %}
-</p>
-
-<p id="nav">
-  <span class="spacer">&nbsp;</span>
-  <span class="link prev"> < </span>  
-  <span class="spacer">&nbsp;</span>
-  <span class="link all"> view all </span>
-  <span class="spacer">&nbsp;</span>
-  <span class="link next"> > </span>
-</p>
-<ul id="posts" class="hidden">
-  {% for post in site.posts %}
-    {% if post.category == page.category %}
-      
-      {% assign klass = '' %}
-      {% if post.title == page.title %}
-        {% assign klass = 'current' %}
+  <ul id="meta">
+    <li><span id="current"></span><span>/</span><span id="total"></span></li>
+    <li><span>
+      {{ page.date | date: '%Y' }}
+      {% if page.tags.size > 1 %}
+      , {{ page.tags | join:', ' }}
       {% endif %}
-      
-      <li class="{{ klass }}">{{ site.url }}{{ post.url }}</li>
-      
-    {% endif %}
-  {% endfor %}
-</ul>
+      </span>
+    </li>
+  </ul>
 
-<ul id="navigation" class="inline-list">
-  <li class="link prev"><</li>
-  <li class="link next">></li>
-</ul>
+  <ul id="navigation" class="top inline-list">
+    <li><span class="link prev"> < </span></li>
+    <li><span class="link all"> view all </span></li>
+    <li><span class="link next"> > </span></li>
+  </ul>
+
+  <ul id="posts" class="hidden">
+    {% for post in site.posts %}
+      {% if post.category == page.category %}
+        
+        {% assign klass = '' %}
+        {% if post.title == page.title %}
+          {% assign klass = 'current' %}
+        {% endif %}
+        
+        <li class="{{ klass }}">{{ site.url }}{{ post.url }}</li>
+        
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <ul id="navigation" class="bottom inline-list">
+    <li class="link prev"><</li>
+    <li class="link next">></li>
+  </ul>
+</article>

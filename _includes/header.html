@@ -1,16 +1,44 @@
 <header id="header" class="block">
   <hgroup>
-    <h1><a href="{{ site.url }}">{{ site.title }}</a></h1>
+    <h1><a href="{{ site.url }}/">{{ site.title }}</a></h1>
   </hgroup>
   
-  <nav>
+  <nav id="menu">
     <h3 class="hidden">Top menu</h3>    
     <ul>
       <li><a href="{{ site.url }}/bio">Biography</a></li>
-      <li><a href="{{ site.url }}/works">Works</a></li>            
+      <li class="works"><a href="#">Works</a></li>            
       <li><a href="http://reszeghbotond.wordpress.com">News</a></li>            
       <li><a href="{{ site.url }}/contact">Contact</a></li>            
     </ul>     
-  </nav>
+  </nav>  
+  
+  <section id="works" class="hidden">
+    <h2><a href="#">Works</a></h2>
+    <nav id="works">
+      <h3 class="hidden">Works menu</h3>    
+      <ul>
+        {% for post in site.posts %}
+          {% if post.category != 'books' %}
+            <li id="{{ post.date | date: '%Y' }}">
+              <a href="{{ site.url }}{{ post.url }}">
+                <span id="year" class="{{ post.date | date: '%Y' }}">{{ post.date | date: "%Y" }}</span>
+                <span id="collection" class="{{ post.category }}"> - {{ post.category }}</span>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    
+    <nav id="books">
+      <h3 class="hidden">Books menu</h3>    
+      {% for post in site.categories.books limit:1 %}
+        <ul>
+          <li><a href="{{ site.url }}{{ post.url }}">Books</a></li>
+        </ul>
+      {% endfor %}
+    </nav>
+  </section>  
   
 </header>

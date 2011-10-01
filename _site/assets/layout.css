@@ -36,8 +36,26 @@ body {
 
 
 
-/* Header
+/* The Grid
 */
+
+#header {
+  width: 20%;
+  margin-right: 10%;
+}
+body#bio #content {
+  width: 70%;
+}
+#header, #content {
+  float: left;
+}
+
+
+
+
+/* Header, Menu
+*/
+
 
 #works #year {
   width: 2.1em;
@@ -45,25 +63,19 @@ body {
 }
 
 
-
-/* Navigation
+/* Content
 */
 
-#navigation {
+article h1 {
+  padding-bottom: 0;
+}
+
+#navigation.bottom {
   position: absolute;
   bottom: 0;
   right: 0;
   font-size: 500%;
 }
-
-
-/* Content
-*/
-
-section h1 {
-  padding-bottom: 0;
-}
-
 
 /* Common 
 */

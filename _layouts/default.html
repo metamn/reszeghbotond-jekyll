@@ -3,7 +3,7 @@
 
 {% include head.html %}  
 
-<body>
+<body id="{{ page.title | downsize }}">
   <div id="container">
     
     {% include header.html %}    
@@ -14,7 +14,7 @@
       <div id="background-image" class="hidden">{{ site.url }}/assets/background.jpg</div>
     {% endif %}
     
-    <section id="content">
+    <section id="content" class="block">
       {{ content }}
     </section>
   </div>

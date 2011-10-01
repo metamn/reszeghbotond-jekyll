@@ -33,23 +33,80 @@
 
   
 
-<body>
+<body id="Books1">
   <div id="container">
     
     <header id="header" class="block">
   <hgroup>
-    <h1><a href="">Részegh Botond</a></h1>
+    <h1><a href="/">Részegh Botond</a></h1>
   </hgroup>
   
-  <nav>
+  <nav id="menu">
     <h3 class="hidden">Top menu</h3>    
     <ul>
       <li><a href="/bio">Biography</a></li>
-      <li><a href="/works">Works</a></li>            
+      <li class="works"><a href="#">Works</a></li>            
       <li><a href="http://reszeghbotond.wordpress.com">News</a></li>            
       <li><a href="/contact">Contact</a></li>            
     </ul>     
-  </nav>
+  </nav>  
+  
+  <section id="works" class="hidden">
+    <h2><a href="#">Works</a></h2>
+    <nav id="works">
+      <h3 class="hidden">Works menu</h3>    
+      <ul>
+        
+          
+            <li id="2011">
+              <a href="/Play 2/test2">
+                <span id="year" class="2011">2011</span>
+                <span id="collection" class="Play 2"> - Play 2</span>
+              </a>
+            </li>
+          
+        
+          
+        
+          
+            <li id="2011">
+              <a href="/Play with the tormented soul's mirror/test11">
+                <span id="year" class="2011">2011</span>
+                <span id="collection" class="Play with the tormented soul's mirror"> - Play with the tormented soul's mirror</span>
+              </a>
+            </li>
+          
+        
+          
+            <li id="2011">
+              <a href="/Play with the tormented soul's mirror/test">
+                <span id="year" class="2011">2011</span>
+                <span id="collection" class="Play with the tormented soul's mirror"> - Play with the tormented soul's mirror</span>
+              </a>
+            </li>
+          
+        
+          
+            <li id="2010">
+              <a href="/Play Old/old">
+                <span id="year" class="2010">2010</span>
+                <span id="collection" class="Play Old"> - Play Old</span>
+              </a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+    
+    <nav id="books">
+      <h3 class="hidden">Books menu</h3>    
+      
+        <ul>
+          <li><a href="/books/books1">Books</a></li>
+        </ul>
+      
+    </nav>
+  </section>  
   
 </header>
     
@@ -58,51 +115,55 @@
       <div id="background-image" class="hidden">/assets/background.jpg</div>
     
     
-    <section id="content">
-      <h1>books</h1>
+    <section id="content" class="block">
+      <article>
+  <header>
+    <h1><span>books</span></h1>
+  </header>
 
-<span id="current"></span>/<span id="total"></span>
+  <ul id="meta">
+    <li><span id="current"></span><span>/</span><span id="total"></span></li>
+    <li><span>
+      2011
+      
+      </span>
+    </li>
+  </ul>
 
-<p>
-  2011
-  
-</p>
+  <ul id="navigation" class="top inline-list">
+    <li><span class="link prev"> < </span></li>
+    <li><span class="link all"> view all </span></li>
+    <li><span class="link next"> > </span></li>
+  </ul>
 
-<p id="nav">
-  <span class="spacer">&nbsp;</span>
-  <span class="link prev"> < </span>  
-  <span class="spacer">&nbsp;</span>
-  <span class="link all"> view all </span>
-  <span class="spacer">&nbsp;</span>
-  <span class="link next"> > </span>
-</p>
-<ul id="posts" class="hidden">
-  
-    
-  
+  <ul id="posts" class="hidden">
     
       
-      
+    
       
         
+        
+        
+          
+        
+        
+        <li class="current">/books/books1</li>
+        
       
+    
       
-      <li class="current">/books/books1</li>
+    
       
     
-  
+      
     
-  
-    
-  
-    
-  
-</ul>
+  </ul>
 
-<ul id="navigation" class="inline-list">
-  <li class="link prev"><</li>
-  <li class="link next">></li>
-</ul>
+  <ul id="navigation" class="bottom inline-list">
+    <li class="link prev"><</li>
+    <li class="link next">></li>
+  </ul>
+</article>
 
     </section>
   </div>
