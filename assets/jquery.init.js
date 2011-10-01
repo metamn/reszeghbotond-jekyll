@@ -3,23 +3,17 @@ jQuery.noConflict();
 // Use jQuery via jQuery(...)
 jQuery(document).ready(function(){
 
-  // Hide unnecessary elements on single post page
-  if (jQuery("#posts").size()) {
-    jQuery("#header").fadeTo(2000, 0);
-    jQuery("article #navigation.top").fadeTo(2000, 0);
-  }
+
+  // Display thumbs 
+  jQuery(".all").click(function() {
+    jQuery("#posts li").each(function (index, element) {
+      var url = jQuery(this).html();
+      jQuery("#thumbs").append(
+        "<div id='thumb'><a href='" + url + "'><img src='" + jQuery(this).attr("id") + "' /></a></div>"
+      ); 
+    });  
+  }); 
   
-  // Show unnecesary elements on mouseover on single post page
-  jQuery("#header, article #navigation.top").hover(
-    function () {
-      jQuery(this).fadeTo(1000, 1);
-    },
-    function () {
-      if (jQuery("#posts").size()) {
-        jQuery(this).fadeTo(500, 0);
-      }      
-    }
-  );
 
   // Calculate the current/total posts
   jQuery("#total").html(jQuery("#posts li").size());
@@ -45,12 +39,30 @@ jQuery(document).ready(function(){
   
   jQuery(".prev").click(function() {
     navigate(jQuery("#posts").find('.current').prev());
-  });
-  
+  });  
   jQuery(".next").click(function() {
     navigate(jQuery("#posts").find('.current').next());
   });
+  
 
+
+  // Hide unnecessary elements on single post page
+  if (jQuery("#posts").size()) {
+    jQuery("#header").fadeTo(2000, 0);
+    jQuery("article #navigation.top").fadeTo(2000, 0);
+  }
+  
+  // Show unnecesary elements on mouseover on single post page
+  jQuery("#header, article #navigation.top").hover(
+    function () {
+      jQuery(this).fadeTo(1000, 1);
+    },
+    function () {
+      if (jQuery("#posts").size()) {
+        jQuery(this).fadeTo(500, 0);
+      }      
+    }
+  );
 
 
   // Making the list of works looking good
@@ -66,14 +78,14 @@ jQuery(document).ready(function(){
       jQuery(this).addClass('hidden');
     }
     collection = jQuery(this).find("#collection").html();
-  });
+  });  
 
   // Displaying Works
   jQuery("#menu li.works").click(function() {
     jQuery("#works").show();
   });
   
-  // Display the background-image
-  jQuery('body').css('background-image', 'url(' + jQuery("#background-image").html() + ')');
   
+  // Display the background-image
+  jQuery('body').css('background-image', 'url(' + jQuery("#background-image").html() + ')');  
 });

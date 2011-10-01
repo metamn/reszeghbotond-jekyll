@@ -39,17 +39,21 @@ body {
 /* The Grid
 */
 
+#header, #content, #thumbs {
+  float: left;
+}
 #header {
   width: 20%;
   margin-right: 10%;
 }
-body#bio #content {
+body#bio #content, #thumbs {
   width: 70%;
 }
-#header, #content {
-  float: left;
+#thumbs {
+  position: absolute;
+  top: 0;
+  left: 30%;
 }
-
 
 
 
@@ -76,6 +80,15 @@ article h1 {
   right: 0;
   font-size: 500%;
 }
+
+#thumb {
+  width: 100px;
+  height: auto;
+  margin: 5%;
+  float: left;
+}
+
+
 
 /* Common 
 */

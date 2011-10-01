@@ -33,7 +33,7 @@ layout: default
           {% assign klass = 'current' %}
         {% endif %}
         
-        <li class="{{ klass }}">{{ site.url }}{{ post.url }}</li>
+        <li class="{{ klass }}" id="{{ site.url }}/assets/{{ post.background }}">{{ site.url }}{{ post.url }}</li>
         
       {% endif %}
     {% endfor %}
@@ -44,3 +44,6 @@ layout: default
     <li class="link next">></li>
   </ul>
 </article>
+
+<aside id="thumbs">
+</aside>
