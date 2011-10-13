@@ -6,12 +6,17 @@ jQuery(document).ready(function(){
 
   // Display thumbs 
   jQuery(".all").click(function() {
-    jQuery("#posts li").each(function (index, element) {
-      var url = jQuery(this).html();
-      jQuery("#thumbs").append(
-        "<div id='thumb'><a href='" + url + "'><img src='" + jQuery(this).attr("id") + "' /></a></div>"
-      ); 
-    });  
+    if (jQuery("#thumbs").html() == "&nbsp;") {
+      jQuery("#posts li").each(function (index, element) {
+        var url = jQuery(this).html();
+        jQuery("#thumbs").append(
+          "<div id='thumb'><a href='" + url + "'><img src='" + jQuery(this).attr("id") + "' /></a></div>"
+        ); 
+      });
+    } else {
+      jQuery("#thumbs").html("&nbsp;");
+    }
+      
   }); 
   
 
@@ -44,36 +49,16 @@ jQuery(document).ready(function(){
     navigate(jQuery("#posts").find('.current').next());
   });
   
-
-
-  // Hide unnecessary elements on single post page
-  if (jQuery("#posts").size()) {
-    jQuery("#header").fadeTo(2000, 0);
-    jQuery("article #navigation.top").fadeTo(2000, 0);
-  }
   
-  // Show unnecesary elements on mouseover on single post page
-  jQuery("#header, article #navigation.top").hover(
-    function () {
-      jQuery(this).fadeTo(1000, 1);
-    },
-    function () {
-      if (jQuery("#posts").size()) {
-        jQuery(this).fadeTo(500, 0);
-      }      
-    }
-  );
+  // Displaying post title & navigation
+  if (jQuery("#thumbs").size() > 0) {
+    jQuery("#article").show();
+  }
 
-
+  
   // Making the list of works looking good
-  var year = 0;
   var collection = '';
-  jQuery("#works li").each(function (index, element) {
-    if (year == jQuery(this).attr("id")) {
-      jQuery(this).find("#year").css('opacity', '0');
-    }
-    year = jQuery(this).attr("id");
-    
+  jQuery("#works li").each(function (index, element) {    
     if (collection == jQuery(this).find("#collection").html()) {
       jQuery(this).addClass('hidden');
     }
@@ -87,5 +72,5 @@ jQuery(document).ready(function(){
   
   
   // Display the background-image
-  jQuery('body').css('background-image', 'url(' + jQuery("#background-image").html() + ')');  
+  jQuery('#content').css('background-image', 'url(' + jQuery("#background-image").html() + ')');  
 });

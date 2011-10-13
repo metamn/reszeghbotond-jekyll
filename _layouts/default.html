@@ -8,13 +8,13 @@
     
     {% include header.html %}    
     
-    {% if page.background != _blank %}
-      <div id="background-image" class="hidden">{{ site.url }}/assets/{{ page.background }}</div>
-    {% else %}
-      <div id="background-image" class="hidden">{{ site.url }}/assets/background.jpg</div>
-    {% endif %}
-    
-    <section id="content" class="block">
+    <section id="content" class="col col-2">
+      {% if page.background != _blank %}
+        <div id="background-image" class="hidden">{{ site.url }}/assets/{{ page.background }}</div>
+      {% else %}
+        <div id="background-image" class="hidden">{{ site.url }}/assets/background.jpg</div>
+      {% endif %}
+      
       {{ content }}
     </section>
   </div>

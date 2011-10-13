@@ -1,4 +1,4 @@
-<header id="header" class="block">
+<header id="header" class="col col-1">
   <hgroup>
     <h1><a href="{{ site.url }}/">{{ site.title }}</a></h1>
   </hgroup>
@@ -22,8 +22,8 @@
           {% if post.category != 'books' %}
             <li id="{{ post.date | date: '%Y' }}">
               <a href="{{ site.url }}{{ post.url }}">
-                <span id="year" class="{{ post.date | date: '%Y' }}">{{ post.date | date: "%Y" }}</span>
-                <span id="collection" class="{{ post.category }}"> - {{ post.category }}</span>
+                <span id="collection" class="{{ post.category }}">{{ post.category }}</span>
+                <span id="year" class="{{ post.date | date: '%Y' }}">/ {{ post.year }}</span>
               </a>
             </li>
           {% endif %}
@@ -40,5 +40,43 @@
       {% endfor %}
     </nav>
   </section>  
+  
+  <article id="article" class="hidden">
+    <header>
+      <h1><span>{{ page.category }}</span></h1>
+    </header>
+
+    <ul id="meta">
+      <li><span id="current"></span><span>/</span><span id="total"></span></li>
+      <li><span>
+        {{ page.years }}
+        {% if page.tags.size > 1 %}
+        , {{ page.tags | join:', ' }}
+        {% endif %}
+        </span>
+      </li>
+    </ul>
+
+    <ul id="navigation" class="bottom inline-list">
+      <li class="link prev"><</li>      
+      <li class="link next">></li>
+      <li class="link all">:::</li>      
+    </ul>
+
+    <ul id="posts" class="hidden">
+      {% for post in site.posts %}
+        {% if post.category == page.category %}
+          
+          {% assign klass = '' %}
+          {% if post.title == page.title %}
+            {% assign klass = 'current' %}
+          {% endif %}
+          
+          <li class="{{ klass }}" id="{{ site.url }}/assets/{{ post.background }}">{{ site.url }}{{ post.url }}</li>
+          
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </article>  
   
 </header>
