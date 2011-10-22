@@ -34,6 +34,7 @@ body {
   background-attachment: fixed;
   -moz-background-size: cover;
   background-size: cover;
+  display: none;
 }
 
 /* adding div specific settings + align to grid
@@ -73,6 +74,10 @@ body {
 
 article h1 {
   padding-bottom: 0;
+}
+
+article ul#meta {
+  margin: 0;
 }
 
 #navigation {

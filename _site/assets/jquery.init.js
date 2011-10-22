@@ -38,7 +38,8 @@ jQuery(document).ready(function(){
   // Navigate to prev and next posts
   function navigate(elem) {
     if (elem) {
-      window.location.href = elem.html();
+      jQuery("#content").fadeOut('slow');
+      setTimeout(function(){ document.location = elem.html();}, 800 );
     }
   }
   
@@ -73,4 +74,5 @@ jQuery(document).ready(function(){
   
   // Display the background-image
   jQuery('#content').css('background-image', 'url(' + jQuery("#background-image").html() + ')');  
+  jQuery("#content").fadeIn('slow');
 });
