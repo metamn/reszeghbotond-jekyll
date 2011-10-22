@@ -28,10 +28,10 @@ jQuery(document).ready(function(){
   current = jQuery("#posts").find('.current');  
   if (current) {
     if (!(current.next().html())) {
-      jQuery(".next").fadeTo('slow', .1);
+      jQuery(".next").fadeTo('slow', .6);
     }
     if (!(current.prev().html())) {
-      jQuery(".prev").fadeTo('slow', .1);
+      jQuery(".prev").fadeTo('slow', .6);
     }
   }
 
